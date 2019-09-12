@@ -22,9 +22,20 @@ const p1 = {
     dcGap: 1,
 };
 
-const p = p0;
+const p2 = {
+    fftLen: 256,
+    nDatBins: 12 * 8, // 96
+    nPilots: 96,
+    pilotOffset: 0,
+    pilotStep: 2,
+    dcGap: 1,
+};
 
-// const nGuardBand = fftLen - dcGap - nDatBins - nPilots; // 55
+const p = p2;
+
+const nGuardBand = p.fftLen - p.dcGap - p.nDatBins - p.nPilots; // 55
+
+console.log(nGuardBand);
 
 const res = {
     dat: [],

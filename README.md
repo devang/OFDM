@@ -1,9 +1,12 @@
 # OFDM pipeline
 
-
 # Protocol
 
 Keep it simple, stupid OFDM pipeline.
+
+# References
+
+[On Synchronization in OFDM Systems Using the Cyclic Prefix](http://www.sm.luth.se/csee/sp/research/conference/bsb96c.pdf)
 
 ## Signal structure
  * encode data bits
@@ -58,10 +61,3 @@ Very simple AWGN channel.
 
 ![rx_samples](kiss-ofdm-rx-samples-plot-quad.png)
 
-# References
-
-[DARPA SDR Hackfest](https://darpahackfest.com/)
-
-[Hacker Dojo Fly-by-SDR Team](https://www.meetup.com/Fly-by-SDR-Hacker-Club-Prep-for-Darpa-SDR-Hackfest)
-
-[On Synchronization in OFDM Systems Using the Cyclic Prefix](http://www.sm.luth.se/csee/sp/research/conference/bsb96c.pdf)

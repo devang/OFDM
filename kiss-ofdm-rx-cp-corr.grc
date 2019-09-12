@@ -82,6 +82,136 @@
     </param>
   </block>
   <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(280, 20)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>cp_len</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>fft_len/4</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(352, 20)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>scale</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>epy_block</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_io_cache</key>
+      <value>('Find Correlation', 'blk', [('frame_length', '80')], [('0', 'float', 80), ('1', 'float', 80)], [('0', 'float', 1), ('1', 'float', 1)], 'arguments to this function show up as parameters in GRC', ['frame_length'])</value>
+    </param>
+    <param>
+      <key>_source_code</key>
+      <value>"""
+Embedded Python Blocks:
+
+Each time this file is saved, GRC will instantiate the first class it finds
+to get ports and parameters of your block. The arguments to __init__  will
+be the parameters. All of them are required to have default values!
+"""
+
+import numpy as np
+from gnuradio import gr
+from multiprocessing import Pool, TimeoutError
+
+
+class blk(gr.sync_block):  # other base classes are basic_block, decim_block, interp_block
+
+    def __init__(self, frame_length=80):  # only default arguments here
+        """arguments to this function show up as parameters in GRC"""
+        gr.sync_block.__init__(
+            self,
+            name='Find Correlation',   # will show up in GRC
+            in_sig=[(np.float32, frame_length), (np.float32, frame_length)],
+            out_sig=[np.float32, np.float32]
+        )
+        # if an attribute with the same name as a parameter is found,
+        # a callback is registered (properties work, too).
+        self.frame_length = frame_length
+
+    def work(self, input_items, output_items):
+
+        index_at_corr = np.argmax(input_items[0][0])
+        val_at_corr = input_items[1][0][index_at_corr]
+
+        # print 'index:{}:{}'.format(index_at_corr, val_at_corr)
+
+        output_items[0][:] = index_at_corr
+        output_items[1][:] = val_at_corr
+        return len(output_items[0])
+</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>frame_length</key>
+      <value>fft_len+cp_len</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(576, 608)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>block2</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_add_xx</key>
     <param>
       <key>alias</key>
@@ -101,7 +231,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(376, 144)</value>
+      <value>(400, 160)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -152,7 +282,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(144, 168)</value>
+      <value>(176, 160)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -195,7 +325,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(344, 264)</value>
+      <value>(200, 240)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -238,7 +368,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 336)</value>
+      <value>(808, 360)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -277,7 +407,7 @@
     </param>
     <param>
       <key>delay</key>
-      <value>256</value>
+      <value>fft_len</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -285,7 +415,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(136, 436)</value>
+      <value>(176, 388)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -336,7 +466,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 348)</value>
+      <value>(584, 356)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -348,7 +478,7 @@
     </param>
     <param>
       <key>length</key>
-      <value>fft_len / 4</value>
+      <value>cp_len</value>
     </param>
     <param>
       <key>max_iter</key>
@@ -364,7 +494,7 @@
     </param>
     <param>
       <key>scale</key>
-      <value>1</value>
+      <value>scale</value>
     </param>
     <param>
       <key>type</key>
@@ -391,7 +521,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(480, 92)</value>
+      <value>(544, 156)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -403,7 +533,7 @@
     </param>
     <param>
       <key>length</key>
-      <value>fft_len / 4</value>
+      <value>cp_len</value>
     </param>
     <param>
       <key>max_iter</key>
@@ -419,7 +549,62 @@
     </param>
     <param>
       <key>scale</key>
+      <value>scale</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_moving_average_xx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
       <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(760, 652)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_moving_average_xx_0_1</value>
+    </param>
+    <param>
+      <key>length</key>
+      <value>100000</value>
+    </param>
+    <param>
+      <key>max_iter</key>
+      <value>4000</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>scale</key>
+      <value>.00001</value>
     </param>
     <param>
       <key>type</key>
@@ -446,7 +631,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(304, 360)</value>
+      <value>(368, 360)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -489,11 +674,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(650, 194)</value>
+      <value>(752, 244)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -521,6 +706,108 @@
     </param>
   </block>
   <block>
+    <key>blocks_stream_to_vector</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(336, 588)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_stream_to_vector_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_items</key>
+      <value>fft_len+cp_len</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_stream_to_vector</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(336, 652)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_stream_to_vector_0_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_items</key>
+      <value>fft_len+cp_len</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_sub_xx</key>
     <param>
       <key>alias</key>
@@ -540,7 +827,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(824, 120)</value>
+      <value>(920, 144)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -583,7 +870,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -611,7 +898,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>256</value>
+      <value>64</value>
     </param>
   </block>
   <block>
@@ -626,7 +913,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1080, 372)</value>
+      <value>(1120, 604)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -634,7 +921,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>pad_sink_1</value>
+      <value>pad_sink_0</value>
     </param>
     <param>
       <key>type</key>
@@ -642,7 +929,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>out2</value>
+      <value>index</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -650,7 +937,7 @@
     </param>
     <param>
       <key>optional</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>vlen</key>
@@ -669,7 +956,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1088, 220)</value>
+      <value>(1120, 668)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -677,7 +964,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>pad_sink_2</value>
+      <value>pad_sink_1</value>
     </param>
     <param>
       <key>type</key>
@@ -685,7 +972,7 @@
     </param>
     <param>
       <key>label</key>
-      <value>out1</value>
+      <value>fcorr</value>
     </param>
     <param>
       <key>num_streams</key>
@@ -693,7 +980,7 @@
     </param>
     <param>
       <key>optional</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>vlen</key>
@@ -712,7 +999,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(16, 324)</value>
+      <value>(16, 356)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -744,11 +1031,7 @@
     </param>
   </block>
   <block>
-    <key>parameter</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
+    <key>virtual_sink</key>
     <param>
       <key>comment</key>
       <value></value>
@@ -759,7 +1042,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(296, 16)</value>
+      <value>(1088, 156)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -767,25 +1050,106 @@
     </param>
     <param>
       <key>id</key>
-      <value>samp_rate</value>
+      <value>virtual_sink_0</value>
     </param>
     <param>
-      <key>label</key>
-      <value>samp_rate</value>
+      <key>stream_id</key>
+      <value>sync_mag</value>
     </param>
+  </block>
+  <block>
+    <key>virtual_sink</key>
     <param>
-      <key>short_id</key>
+      <key>comment</key>
       <value></value>
     </param>
     <param>
-      <key>type</key>
-      <value>eng_float</value>
+      <key>_enabled</key>
+      <value>True</value>
     </param>
     <param>
-      <key>value</key>
-      <value>10e6</value>
+      <key>_coordinate</key>
+      <value>(1080, 388)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_sink_0_0</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>sync_phase</value>
     </param>
   </block>
+  <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(72, 652)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_0</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>sync_mag</value>
+    </param>
+  </block>
+  <block>
+    <key>virtual_source</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(64, 588)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>virtual_source_0_0</value>
+    </param>
+    <param>
+      <key>stream_id</key>
+      <value>sync_phase</value>
+    </param>
+  </block>
+  <connection>
+    <source_block_id>block2</source_block_id>
+    <sink_block_id>pad_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>block2</source_block_id>
+    <sink_block_id>blocks_moving_average_xx_0_1</sink_block_id>
+    <source_key>1</source_key>
+    <sink_key>0</sink_key>
+  </connection>
   <connection>
     <source_block_id>blocks_add_xx_0</source_block_id>
     <sink_block_id>blocks_moving_average_xx_0_0</sink_block_id>
@@ -812,7 +1176,7 @@
   </connection>
   <connection>
     <source_block_id>blocks_complex_to_magphase_0</source_block_id>
-    <sink_block_id>pad_sink_1</sink_block_id>
+    <sink_block_id>virtual_sink_0_0</sink_block_id>
     <source_key>1</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -841,6 +1205,12 @@
     <sink_key>1</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_moving_average_xx_0_1</source_block_id>
+    <sink_block_id>pad_sink_1</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_multiply_conjugate_cc_0</source_block_id>
     <sink_block_id>blocks_moving_average_xx_0</sink_block_id>
     <source_key>0</source_key>
@@ -853,8 +1223,20 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>blocks_stream_to_vector_0</source_block_id>
+    <sink_block_id>block2</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_stream_to_vector_0_0</source_block_id>
+    <sink_block_id>block2</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
     <source_block_id>blocks_sub_xx_0</source_block_id>
-    <sink_block_id>pad_sink_2</sink_block_id>
+    <sink_block_id>virtual_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -873,6 +1255,18 @@
   <connection>
     <source_block_id>pad_source_0</source_block_id>
     <sink_block_id>blocks_multiply_conjugate_cc_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_0</source_block_id>
+    <sink_block_id>blocks_stream_to_vector_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_0_0</source_block_id>
+    <sink_block_id>blocks_stream_to_vector_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

@@ -82,6 +82,168 @@
     </param>
   </block>
   <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(656, 36)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>carriers_high</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>((1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11, 12, -12, 14, -14, 15, -15, 16, -16, 17, -17, 18, -18, 19, -19, 20, -20, 21, -21, 22, -22, 23, -23, 24, -24, 25, -25, 26, -26, 27, -27, 28, -28, 29, -29, 30, -30, 31, -31, 32, -32, 33, -33, 34, -34, 35, -35, 36, -36, 38, -38, 39, -39, 40, -40, 41, -41, 42, -42, 43, -43, 44, -44, 45, -45, 46, -46, 47, -47, 48, -48, 49, -49, 50, -50, 51, -51, 52, -52, 53, -53, 54, -54, 55, -55, 56, -56, 57, -57, 58, -58, 59, -59, 60, -60, 62, -62, 63, -63, 64, -64, 65, -65, 66, -66, 67, -67, 68, -68, 69, -69, 70, -70, 71, -71, 72, -72, 73, -73, 74, -74, 75, -75, 76, -76, 77, -77, 78, -78, 79, -79, 80, -80, 81, -81, 82, -82, 83, -83, 84, -84, 86, -86, 87, -87, 88, -88, 89, -89, 90, -90, 91, -91, 92, -92, 93, -93, 94, -94, 95, -95, 96, -96, 97, -97, 98, -98, 99, -99, 100, -100), (1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11, 12, -12, 14, -14, 15, -15, 16, -16, 17, -17, 18, -18, 19, -19, 20, -20, 21, -21, 22, -22, 23, -23, 24, -24, 25, -25, 26, -26, 27, -27, 28, -28, 29, -29, 30, -30, 31, -31, 32, -32, 33, -33, 34, -34, 35, -35, 36, -36, 38, -38, 39, -39, 40, -40, 41, -41, 42, -42, 43, -43, 44, -44, 45, -45, 46, -46, 47, -47, 48, -48, 49, -49, 50, -50, 51, -51, 52, -52, 53, -53, 54, -54, 55, -55, 56, -56, 57, -57, 58, -58, 59, -59, 60, -60, 62, -62, 63, -63, 64, -64, 65, -65, 66, -66, 67, -67, 68, -68, 69, -69, 70, -70, 71, -71, 72, -72, 73, -73, 74, -74, 75, -75, 76, -76, 77, -77, 78, -78, 79, -79, 80, -80, 81, -81, 82, -82, 83, -83, 84, -84, 86, -86, 87, -87, 88, -88, 89, -89, 90, -90, 91, -91, 92, -92, 93, -93, 94, -94, 95, -95, 96, -96, 97, -97, 98, -98, 99, -99, 100, -100))</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(656, 100)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>carriers_low</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>(range(-26, -21) + range(-20, -7) + range(-6, 0) + range(1, 7) + range(8, 21) + range(22, 27),)</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(832, 36)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>pilot_carriers_high</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>((13, -13, 37, -37, 61, -61, 85, -85), (13, -13, 37, -37, 61, -61, 85, -85))</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(832, 100)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>pilot_carriers_low</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>((-21, -7, 7, 21,),)</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1000, 36)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>pilot_symbols_high</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>((-1, 1, -1, 1, -1, 1, -1, 1), (-1, 1, -1, 1, -1, 1, -1, 1))</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1000, 100)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>pilot_symbols_low</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>((1, 1, 1, -1,),)</value>
+    </param>
+  </block>
+  <block>
     <key>analog_const_source_x</key>
     <param>
       <key>alias</key>
@@ -105,7 +267,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(344, 252)</value>
+      <value>(464, 236)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -129,57 +291,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_add_const_vxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(320, 180)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_add_const_vxx_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>int</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_float_to_complex</key>
     <param>
       <key>alias</key>
@@ -199,7 +310,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(552, 208)</value>
+      <value>(696, 208)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -242,7 +353,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(432, 124)</value>
+      <value>(496, 180)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -270,57 +381,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_multiply_const_vxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(152, 220)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_const_vxx_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>int</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_stream_to_tagged_stream</key>
     <param>
       <key>alias</key>
@@ -340,7 +400,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 268)</value>
+      <value>(872, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -364,7 +424,7 @@
     </param>
     <param>
       <key>packet_len</key>
-      <value>192</value>
+      <value>fft_len-(fft_len/4)</value>
     </param>
     <param>
       <key>type</key>
@@ -423,15 +483,15 @@
     </param>
     <param>
       <key>occupied_carriers</key>
-      <value>((1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11, 12, -12, 14, -14, 15, -15, 16, -16, 17, -17, 18, -18, 19, -19, 20, -20, 21, -21, 22, -22, 23, -23, 24, -24, 25, -25, 26, -26, 27, -27, 28, -28, 29, -29, 30, -30, 31, -31, 32, -32, 33, -33, 34, -34, 35, -35, 36, -36, 38, -38, 39, -39, 40, -40, 41, -41, 42, -42, 43, -43, 44, -44, 45, -45, 46, -46, 47, -47, 48, -48, 49, -49, 50, -50, 51, -51, 52, -52, 53, -53, 54, -54, 55, -55, 56, -56, 57, -57, 58, -58, 59, -59, 60, -60, 62, -62, 63, -63, 64, -64, 65, -65, 66, -66, 67, -67, 68, -68, 69, -69, 70, -70, 71, -71, 72, -72, 73, -73, 74, -74, 75, -75, 76, -76, 77, -77, 78, -78, 79, -79, 80, -80, 81, -81, 82, -82, 83, -83, 84, -84, 86, -86, 87, -87, 88, -88, 89, -89, 90, -90, 91, -91, 92, -92, 93, -93, 94, -94, 95, -95, 96, -96, 97, -97, 98, -98, 99, -99, 100, -100), (1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10, 11, -11, 12, -12, 14, -14, 15, -15, 16, -16, 17, -17, 18, -18, 19, -19, 20, -20, 21, -21, 22, -22, 23, -23, 24, -24, 25, -25, 26, -26, 27, -27, 28, -28, 29, -29, 30, -30, 31, -31, 32, -32, 33, -33, 34, -34, 35, -35, 36, -36, 38, -38, 39, -39, 40, -40, 41, -41, 42, -42, 43, -43, 44, -44, 45, -45, 46, -46, 47, -47, 48, -48, 49, -49, 50, -50, 51, -51, 52, -52, 53, -53, 54, -54, 55, -55, 56, -56, 57, -57, 58, -58, 59, -59, 60, -60, 62, -62, 63, -63, 64, -64, 65, -65, 66, -66, 67, -67, 68, -68, 69, -69, 70, -70, 71, -71, 72, -72, 73, -73, 74, -74, 75, -75, 76, -76, 77, -77, 78, -78, 79, -79, 80, -80, 81, -81, 82, -82, 83, -83, 84, -84, 86, -86, 87, -87, 88, -88, 89, -89, 90, -90, 91, -91, 92, -92, 93, -93, 94, -94, 95, -95, 96, -96, 97, -97, 98, -98, 99, -99, 100, -100))</value>
+      <value>carriers_low</value>
     </param>
     <param>
       <key>pilot_carriers</key>
-      <value>((13, -13, 37, -37, 61, -61, 85, -85), (13, -13, 37, -37, 61, -61, 85, -85))</value>
+      <value>pilot_carriers_low</value>
     </param>
     <param>
       <key>pilot_symbols</key>
-      <value>((-1, 1, -1, 1, -1, 1, -1, 1), (-1, 1, -1, 1, -1, 1, -1, 1))</value>
+      <value>pilot_symbols_low</value>
     </param>
     <param>
       <key>sync_words</key>
@@ -466,7 +526,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(640, 368)</value>
+      <value>(720, 384)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -533,7 +593,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>256</value>
+      <value>64</value>
     </param>
   </block>
   <block>
@@ -564,7 +624,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 344)</value>
+      <value>(448, 376)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -611,7 +671,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(928, 436)</value>
+      <value>(984, 404)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -654,7 +714,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 164)</value>
+      <value>(8, 180)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -697,7 +757,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 388)</value>
+      <value>(8, 404)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -724,7 +784,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1008, 196)</value>
+      <value>(1112, 220)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -746,12 +806,6 @@
     <sink_key>1</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_add_const_vxx_0</source_block_id>
-    <sink_block_id>blocks_int_to_float_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>blocks_float_to_complex_0</source_block_id>
     <sink_block_id>blocks_stream_to_tagged_stream_0</sink_block_id>
     <source_key>0</source_key>
@@ -760,12 +814,6 @@
   <connection>
     <source_block_id>blocks_int_to_float_0</source_block_id>
     <sink_block_id>blocks_float_to_complex_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
-    <sink_block_id>blocks_add_const_vxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -795,7 +843,7 @@
   </connection>
   <connection>
     <source_block_id>pad_source_0</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
+    <sink_block_id>blocks_int_to_float_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
